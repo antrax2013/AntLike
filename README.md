@@ -1,4 +1,4 @@
-AntLike
-=======
+AntLike button
+================
 
-AntColorPicker, is the jQuery like button plug-in of AntProduction
+AntLike button, is the jQuery like button plug-in of AntProduction
