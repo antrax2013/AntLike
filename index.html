@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="utf-8" />
+		<meta content="AntColorPicker is part of AntLibrairies. AntColorPicker a jQuery color picker plug-in." name="description">
+		<meta content="antproduction, jquery ui library, jquery, turnkey jquery ui library, javascript library, AntColorPicker, color picker " name="keywords">
+		<meta name="author" content="Antrax2013">
+		
+        <title>Documentation of AntLike button - AntProduction</title>
+		<link href="public/css/style.css" rel="stylesheet">
+		
+		<!-- hightLight Syntaxe -->
+		<link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/default.min.css">
+		<script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>		
+		
+		<script type="text/javascript" src="public/js/libs/external-libs/google-analytics.js"></script>
+	</head>
+ 
+    <body>
+		<header>
+			<section class="content-wrapper">
+				<div class="float-left">
+				    <h1 class="site-title">AntLike button</h1>
+					<br/>
+					<span class="library-version">11/11/2014 - first release of AntLike button is avaliable !!</span>
+				</div>
+				<div class="float-right">
+					<a href="http://antproduction.free.fr/" title="AntProduction. Set once, daily use"><img src="public/images/antproduction-logo-blue-159x35.png" alt="logo of AntProduction. Set once, daily use" /></a>
+				</div>
+			</section>
+		</header>
+		<article class="main-content clear-fix" id="body">
+			<section class="content-wrapper">
+                <h2>About of AntLike button</h2>
+				<p>
+					<strong>AntLike button</strong>, is the jQuery like button plug-in of AntProduction.
+                </p>
+                <br />
+                <p>Have a question about <strong>AntLike button</strong> ? <a href="https://github.com/antrax2013/AntLike/issues" title="GitHub Issue of AntLike button">Please use GitHub Issue.</a></p>
+			</section>
+
+			<section class="content-wrapper">
+				<h2>Documentation of AntLike button</h2>
+                <p>
+                    <strong>AntLike button</strong>, is a button with 2 states: like and unlike and a counter which counts the number of "like". The original state is unlike. When user click on <strong>AntLike button</strong> for the first time, the state become "like" and the counter is incremented. If the user click again the original state is restored and the counter is drecemented.
+                </p>
+                <br />
+                <p class="description darkred">
+                    String.js is required: <a href="public/js/libs/String.js" title="Basic sample of AntLike button, the jQuery like button of AntProduction" target="_blank">download</a>
+                </p>
+				<table>
+					<tr>
+						<th>Fields</th>
+						<th>Description</th>
+					</tr>
+                    <tr>
+                        <td>HtmlContent <span class="type">[html]</span></td>
+                        <td><span class="description">The basic template Html to display the AntLike button.</span></td>
+                    </tr>
+                    <tr>
+                        <td>like <span class="type">[json]</span></td>
+                        <td><span class="description">Like is a json object that contains description of "like" state. It's compounded by :
+                            <ul>
+                                <li><span class='type darkred'>image</span>: the relative path of directory of the like icon of AntLike button</li>
+                                <li><span class='type darkred'>alt</span>: the label of alt parameter of the like icon of AntLike button</li>
+                                <li><span class='type darkred'>title</span>: the label of the tooltip of the like icon of AntLike button</li>
+                            </ul>
+                        </span></td>
+                    </tr>
+                    <tr>
+                        <td>unlike <span class="type">[json]</span></td>
+                        <td><span class="description">Unlike is a json object that contains description of "unlike" state. It's compounded by :
+                            <ul>
+                                <li><span class='type darkred'>image</span>: the relative path of directory of the unlike icon of AntLike button</li>
+                                <li><span class='type darkred'>alt</span>: the label of alt parameter of the unlike icon unlike of AntLike button</li>
+                                <li><span class='type darkred'>title</span>: the label of the tooltip of the unlike icon of AntLike button</li>
+                            </ul>
+                        </span></td>
+                    </tr>
+                    <tr>
+                        <td>events <span class="type">[json]</span></td>
+                        <td><span class="description">Events is a json object that contains description of events. 2 events are availiables :<br>
+                            <ul>OnClick
+                                <li><span class='type darkred'>url</span>: the url of method called by Ajax request with Post method. If null, value by default, Ajax requests are disabled otherwise they are activated.</li>
+                                <li><span class='type darkred'>async</span>: boolean to define if the Ajax request is asynchronous or not</li>
+                                <li><span class='type darkred'>action</span>: method to manage click event</li>
+                            </ul><br>
+                            <ul>OnLoad
+                                <li><span class='type darkred'>enabled</span>: boolean to define if this event is activated.</li>
+                                <li><span class='type darkred'>url</span>: the url of method called by Ajax request with Post method. If null, value by default, Ajax requests are disabled otherwise they are activated.</li>
+                                <li><span class='type darkred'>action</span>: method to manage load event</li>
+                            </ul>
+                        </span></td>
+                    </tr>
+                    <tr>
+                        <td>nbLikes <span class="type">[integer]</span></td>
+                        <td>
+                            <span class="description">the current value of AntLike button counter</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>readOnly <span class="type">[boolean]</span></td>
+                        <td>
+                            <span class="description">Is the parameter to disable events of AntLike button.</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>style <span class="type">[string]</span></td>
+                        <td>
+                            <span class="description">
+                                Is the parameter to define the CSS style of the AntLike button.
+                                <ul>
+                                    Available styles are :
+                                    <li>basic (blue style)</li>
+                                    <li>red-grey</li>
+                                    <li>green</li>
+                                </ul></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>userLike <span class="type">[boolean]</span></td>
+                        <td>
+                            <span class="description">the current state of AntLike button</span>
+                        </td>
+                    </tr>
+				</table>
+			</section>
+            <h2 id="Triggers">Triggers of AntLike button</h2>
+            <table>
+                <tr>
+                    <th>Trigger</th>
+                    <th colspan='2'>Parameters</th>
+                </tr>
+                <!-- intDialogBox -->
+                <tr>
+                    <td rowspan='2'>
+                        <strong>update</strong>
+                        <br /><span class="description">Trigger to update current state and value of AntLike button</span>
+                    </td>
+                    <td>likeVm <span class="type">[json object]</span></td>
+                    <td><span class="description">Json object compounded like this:
+                        <ul>
+                            <li><span class='type darkred'>userLike</span>: boolean to define the state of AntLike button</li>
+                            <li><span class='type darkred'>nbLikes</span>: integer to define the value of the counter of AntLike button</li>
+                        </ul>
+                        <br /><span class="description"><span class='type darkred'>usage</span>: <pre><code style="background-color:#fff">$(this).trigger('AntLike.update', { "userLike": true, "nbLikes": 12 });</code></pre></span>
+                    </span></td>
+                </tr>
+            </table>
+            </section>
+			<section class="content-wrapper">
+				<h2 id="Samples">Samples of AntColorPicker</h2>
+				<table>
+					<tr>
+						<td>Basic sample of <strong>AntLike button</strong>.</td>
+						<td><a href="samples/basic-sample-antlike.html" title="Basic sample of AntLike button, the jQuery like button of AntProduction" target="_blank">Try it</a></td>
+					</tr>
+                    <tr>
+                        <td>Sample of <strong>AntLike button</strong> based on Ajax Post requests for loading and updating.</td>
+                        <td><a href="samples/sample-antlike-with-ajax.html" title="Sample of AntLike button, the jQuery like button of AntProduction" target="_blank">Try it</a></td>
+                    </tr>
+                    <tr>
+                        <td>Sample of paired <strong>AntLike button</strong>.</td>
+                        <td><a href="samples/sample-antlike-with-two-paired-antlike-button.html" title="Sample of paired AntLike button, utilization of the jQuery like button of AntProduction" target="_blank">Try it</a></td>
+                    </tr>
+                    <!-- <tr>
+                        <td>Sample of CSS customization of <strong>AntLike button</strong>.</td>
+                        <td><a href="samples/sample-custom-antlike-button.html" title="Sample of custom AntLike button, utilization of the jQuery like button of AntProduction" target="_blank">Try it</a></td>
+                    </tr> -->
+				</table>
+			</section>
+		</article>
+		<footer>Copyright © 2014 <a href="http://antproduction.free.fr/" title="AntProduction. Set once, daily use">AntProduction</a></footer>
+    </body>
+</html>

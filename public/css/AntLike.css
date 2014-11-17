@@ -1,0 +1,54 @@
+﻿.hidden { display:none;}
+
+.blocAntLike.unlike, .blocAntLike {
+    display: inline-block;
+    margin-left: 8px;
+    font-size: 13px !important;
+    font-weight: bold;
+    height: 17px;
+    vertical-align: top;
+    border-radius: 3px;
+}
+
+.blocAntLike {
+    background: #eef;
+    border: 2px #3b389c solid;
+    cursor: pointer;
+    color: #3b389c;
+}
+
+.blocAntLike.unlike {
+    background: #c9c9c9 !important;
+    border: 2px #666 solid !important;
+    color: #666 !important;
+}
+
+
+.iconAntLike {
+    float: left;
+    position: relative;
+    top: 1px;
+    width: 16px;
+}
+
+span.AntLikeValue {
+    padding-right: 4px;
+    padding-left: 4px;
+    position: relative;
+    top: -0.5px;
+}
+
+.red-grey {
+    background: #ebebeb;
+    border: 2px #d02525 solid;
+    cursor: pointer;
+    color: #595757;
+}
+
+.green {
+    background: #b6dca6;
+    border: 2px #068241 solid;
+    cursor: pointer;
+    color: #068241;
+}
+

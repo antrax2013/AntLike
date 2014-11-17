@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Custom sample of paired AntLike buttons - AntProduction</title>
+    <meta content="Custom sample of paired AntLike buttons, the jQuery like button plug-in of AntProduction." name="description">
+    <meta content="antproduction, jquery plug in, jquery, turnkey jquery library, AntLike, like button" name="keywords">
+    <meta name="author" content="Antrax2013">
+
+    <!-- hightLight Syntaxe -->
+    <link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/default.min.css">
+    <script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
+
+    <link href="../public/css/style.css" rel="stylesheet">
+    <link href="../public/css/AntLike.css" rel="stylesheet">
+
+
+    <script type="text/javascript" src="../public/js/libs/external-libs/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" src="../public/js/libs/external-libs/google-analytics.js"></script>
+    <script type="text/javascript" src="../public/js/libs/String.js"></script>
+    <script type="text/javascript" src="../public/js/libs/AntLike.js"></script>
+    <script type="text/javascript">
+
+        //Sources code hightLight syntaxe
+        hljs.initHighlightingOnLoad();
+
+        $(document).ready(function() {
+            //classical object initialization
+            var $cible = $(".AntLikeButton");
+            $cible.AntLike({//Custom parameters
+                "nbLikes": 12
+            });
+
+            //Adding a second click event to synchronize AntLikeButton buttons
+            $cible.click(function () {
+                var $$ = $(this);
+                //for each AntLikeButton that are not $(this), manually, I fire the AntLike.update trigger
+                $("div.AntLikeButton[id!='"+$$.attr("id")+"']").each(function () {
+                    var val = parseInt($$.find(".AntLikeValue").text());
+                    $(this).trigger('AntLike.update', { "userLike": !$$.hasClass("unlike"), "nbLikes": val });
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+<header>
+    <section class="content-wrapper">
+        <div class="float-left">
+            <h1 class="site-title">AntLike button jQuery plug in</h1>
+            <br/><span class="library-version">v1.0 - 11/11/2014</span>
+        </div>
+        <div class="float-right">
+            <a href="http://antproduction.free.fr/" title="AntProduction. Set once, daily use"><img src="../public/images/antproduction-logo-blue-159x35.png" alt="logo of AntProduction. Set once, daily use" /></a>
+        </div>
+    </section>
+</header>
+<article class="main-content clear-fix" id="body">
+    <section class="content-wrapper">
+        <h2>Custom sample of paired AntLike buttons</h2>
+        <div class="AntLikeButton" id="AntLikeButton_1"></div>
+        <br /><br />
+        <p>In this example, the <strong>AntLike button</strong> are paired.
+            On click event fired for one of these button. Automaticaly, the other is update with sames value and state.
+            To paired them I bind a second click event on both and I use the update trigger. To use Ajax and paidre, I recommand to use synchronous ajax request like this: <br>
+            <pre><code style="background-color:#fff">
+$(".AntLikeButton").AntLike({
+    "events": {
+        "onClick": { "async": false}
+    }
+});
+            </code></pre>
+        </p>
+        <br />
+        <div class="AntLikeButton" id="AntLikeButton_2"></div>
+    </section>
+    <section class="content-wrapper">
+        <h2>Source Code</h2>
+				<pre><code style="background-color:#fff">
+//classical object initialization
+var $cible = $(".AntLikeButton");
+$cible.AntLike({//Custom parameters
+    "nbLikes": 12
+});
+
+//Adding a second click event to synchronize AntLikeButton buttons
+$cible.click(function () {
+    var $$ = $(this);
+    //for each AntLikeButton that are not $(this), manually, I fire the AntLike.update trigger
+    $("div.AntLikeButton[id!='"+$$.attr("id")+"']").each(function () {
+        var val = parseInt($$.find(".AntLikeValue").text());
+        $(this).trigger('AntLike.update', { "userLike": !$$.hasClass("unlike"), "nbLikes": val });
+    });
+});
+                </code>
+					</pre>
+    </section>
+</article>
+<footer>Copyright © 2014 <a href="http://antproduction.free.fr/">AntProduction</a></footer>
+</body>
+</html>
