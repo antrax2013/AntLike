@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Custom sample of AntLike button based on ajax - AntProduction</title>
+    <meta content="Custom sample of AntLike button based on ajax, the jQuery like button plug-in of AntProduction." name="description">
+    <meta content="antproduction, jquery plug in, jquery, turnkey jquery library, AntLike, like button" name="keywords">
+    <meta name="author" content="Antrax2013">
+
+    <!-- hightLight Syntaxe -->
+    <link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/default.min.css">
+    <script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
+
+    <link href="../public/css/style.css" rel="stylesheet">
+    <link href="../public/css/AntLike.css" rel="stylesheet">
+
+
+    <script type="text/javascript" src="../public/js/libs/external-libs/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" src="../public/js/libs/external-libs/google-analytics.js"></script>
+    <script type="text/javascript" src="../public/js/libs/String.js"></script>
+    <script type="text/javascript" src="../public/js/libs/AntLike.js"></script>
+    <script type="text/javascript">
+
+        //Sources code hightLight syntaxe
+        hljs.initHighlightingOnLoad();
+
+        $(document).ready(function() {
+            //initialisation of AntLikeButton
+            $("#AntLikeButton").AntLike({//Custom parameters
+                events:{
+                    onLoad: {
+                        enabled: true, //boolean to activate the load event
+                        url:"../public/php/load.php" //the url to load initial values
+                    },
+                    onClick: {
+                        url:"../public/php/update.php" //the url to update values
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+<header>
+    <section class="content-wrapper">
+        <div class="float-left">
+            <h1 class="site-title">AntLike button jQuery plug in</h1>
+            <br/><span class="library-version">v1.0 - 11/11/2014</span>
+        </div>
+        <div class="float-right">
+            <a href="http://antproduction.free.fr/" title="AntProduction. Set once, daily use"><img src="../public/images/antproduction-logo-blue-159x35.png" alt="logo of AntProduction. Set once, daily use" /></a>
+        </div>
+    </section>
+</header>
+<article class="main-content clear-fix" id="body">
+    <section class="content-wrapper">
+        <h2>Custom sample of AntLike button with ajax request</h2>
+        <p>In this example, for loading and updating, the <strong>AntLike button</strong> is dependent on Ajax Post requests.</p>
+        <p>A Json object, LikeVM, is used to communicate with server. It's based on a boolean to define its state and an integer for its counter.</p>
+        <p>On loading, the <strong>AntLike button</strong> is initialized with LikeVM.</p>
+        <p>When the <strong>AntLike button</strong> is clicked, it sends its current state, like or unlike and the value of counter by ajax Post request, and it receives its new state and value of counter.</p>
+        <br />
+        <div id="AntLikeButton"></div>
+    </section>
+    <section class="content-wrapper">
+        <h2>Source Code</h2>
+				<pre><code style="background-color:#fff">
+//initialisation of AntLikeButton
+$("#AntLikeButton").AntLike({//Custom parameters
+    events:{
+        onLoad: {
+            enabled: true, //boolean to activate the load event
+            url:"../public/php/load.php" //the url to load initial values
+        },
+        onClick: {
+            url:"../public/php/update.php" //the url to update values
+        }
+    }
+});
+                </code>
+					</pre>
+    </section>
+</article>
+<footer>Copyright © 2014 <a href="http://antproduction.free.fr/">AntProduction</a></footer>
+</body>
+</html>
