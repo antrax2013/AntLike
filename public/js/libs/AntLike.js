@@ -1,4 +1,4 @@
-/*! AntColorPicker V1.0
+/*! AntLike button V1.0
  * Copyright (c) 2014 AntProduction
  * http://antproduction.free.fr/AntLike
  * https://github.com/antrax2013/AntLike
